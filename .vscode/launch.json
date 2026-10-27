@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ESP32-S3 OpenOCD JTAG",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/build/hello_test.elf",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/Espressif/tools/tools/xtensa-esp-elf-gdb/14.2_20240403/xtensa-esp-elf-gdb/bin/xtensa-esp-elf-gdb-3.12.exe",
+            "miDebuggerServerAddress": "localhost:3333",
+            "debugServerPath": "C:/Espressif/tools/tools/openocd-esp32/v0.12.0-esp32-20260831/bin/openocd.exe",
+            "debugServerArgs": "-f board/esp32s3-builtin.cfg",
+            "serverStarted": "Hardware thread",
+            "environment": [
+                {
+                    "name": "OPENOCD_SCRIPTS",
+                    "value": "C:/Espressif/tools/tools/openocd-esp32/v0.12.0-esp32-20260831/share/openocd/scripts"
+                },
+                {
+                    "name": "ESP_ROM_ELF_DIR",
+                    "value": "C:/Espressif/tools/tools/esp-rom-elfs/20241011/"
+                }
+            ],
+            "setupCommands": [
+                { "text": "set remotetimeout 20" },
+                { "text": "monitor reset halt" },
+                { "text": "flushregs" }
+            ]
+        }
+    ]
+}

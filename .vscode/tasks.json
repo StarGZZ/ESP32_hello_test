@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ESP-IDF Build",
+            "type": "shell",
+            "command": "C:\\Espressif\\idf_build.bat",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ESP-IDF Flash",
+            "type": "shell",
+            "command": "C:\\Espressif\\idf_build.bat",
+            "args": [
+                "-p",
+                "${input:port}",
+                "flash",
+                "monitor"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "port",
+            "type": "promptString",
+            "description": "COM 端口号 (如 COM5)",
+            "default": "COM5"
+        }
+    ]
+}

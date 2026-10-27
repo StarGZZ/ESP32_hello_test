@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "ESP32-S3",
+            "compilerPath": "C:/Espressif/tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp-elf-gcc.exe",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "includes": [
+                "${workspaceFolder}/build/config",
+                "${workspaceFolder}/main",
+                "C:/Espressif/esp-idf/components/**"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
